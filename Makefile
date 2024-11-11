@@ -1,4 +1,4 @@
-FILE = <file-name-here-no-extension>
+FILE = asgn6
 
 build: $(FILE).s
 	gcc -Wall -g $(FILE).s -o $(FILE) -lm -fno-pie -no-pie
