@@ -28,8 +28,8 @@ movq %rsp, %rbp
 # === main() code here ===
 
 # setting up a & b - hardcoding
-movq $6, %rbx  #a = rbx (4)
-movq $2, %r12  #b = r12 (3)
+movq $6, %rbx  #a = rbx (6)
+movq $2, %r12  #b = r12 (2)
 
 # a * 5
 movq $5, %rax
@@ -42,10 +42,9 @@ xorq %rax, %rax
 Call printf
 
 # (a + b) - (a/b)
-movq %r12, %r11  # b in r11    c: r11 = b
-addq %rbx, %r11  # a + b in r11   c: r11+= a
-
-movq %rbx, %rax    # a in rax  c: rax = a
+movq %r12, %r11  # b in r11    
+addq %rbx, %r11  # a + b in r11   
+movq %rbx, %rax    # a in rax  
 cqto             #sign extends   rdx:rax
 idivq %r12       #a/b (rax / rcx) in rax   
 subq %rax, %r11 #(a+b) - (a/b) in r11
